@@ -37,6 +37,13 @@ public class LoanService {
         }
     }
 
+    public boolean canBorrow(Reader reader, List<Book> books) {
+        int currentSize = reader.getBooks().size();
+        int requestedBooks = books.size();
+
+        return (currentSize + requestedBooks) <= reader.getLoanLimit();
+    }
+
     public Loan searchById(String id) {
         for(Loan loan: loans) {
             if(loan.getId().equals(id)) {
