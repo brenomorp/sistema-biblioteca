@@ -249,7 +249,11 @@ public class Menu {
                             }
 
                             if(loanService.canBorrow(reader, books)) {
-                                loanService.registerLoan(id, reader, books);
+                                try {
+                                    loanService.registerLoan(id, reader, books);
+                                } catch (IllegalArgumentException e) {
+                                    System.out.println(e.getMessage());
+                                }
                             } else {
                                 System.out.println("Limite máximo de livros ultrapassado!");
                             }

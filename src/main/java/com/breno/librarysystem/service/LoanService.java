@@ -12,6 +12,12 @@ public class LoanService {
     private List<Loan> loans = new ArrayList<>();
 
     public void registerLoan(String id, Reader reader, List<Book> books) {
+        for(Book book : books) {
+            if(!book.isAvailable()) {
+                throw new IllegalArgumentException("O livro '" + book.getTitle() + "' não está disponível!");
+            }
+        }
+
         Loan loan = new Loan(id, reader, books, LocalDate.now(), LocalDate.now().plusDays(30));
         loans.add(loan);
 
