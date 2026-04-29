@@ -90,6 +90,7 @@ Cada opção abre um submenu com as ações disponíveis para aquela área.
 - A data prevista de devolução é definida automaticamente como 30 dias após o empréstimo
 - O sistema detecta e informa quando um livro é devolvido com atraso
 - O histórico de empréstimos é mantido mesmo após a devolução
+- Não é possível registrar empréstimo de um livro que já está emprestado
 
 ## 🗂️ Padrão de commits
 
